@@ -1,0 +1,52 @@
+{
+  "name": "red-token-gen",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@chainlink/contracts": "^0.1.7",
+    "@ethersproject/providers": "^5.3.1",
+    "@iconscout/react-unicons": "^1.1.6",
+    "@ocean-ui/ocean": "^0.8.7",
+    "@openzeppelin/contracts": "^4.1.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "axios": "^0.21.1",
+    "react": "^17.0.2",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-spinner-material": "^1.3.1",
+    "styled-components": "^5.3.0",
+    "web-vitals": "^1.0.1",
+    "web3": "^1.3.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:contracts": "cd ./src/contracts/&& find ./solidity -maxdepth 2 -name \\*.sol -type f -exec solc --base-path ./solidity {} @openzeppelin/contracts/=../../../node_modules/@openzeppelin/contracts/ @chainlink/contracts/=../../../node_modules/@chainlink/contracts/ --abi --bin --overwrite -o ./dist --optimize --allow-paths $(realpath ../../node_modules/@openzeppelin/contracts/),$(realpath ./solidity) \\;"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
